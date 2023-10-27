@@ -1,4 +1,4 @@
-FROM amazoncorretto:17-alpine
+FROM amazoncorretto:17-alpine-jdk
 MAINTAINER Geo
-COPY out/artifacts/prueba_con_jar_jar/prueba-con-jar.jar prueba-con-jar.jar
-ENTRYPOINT ["java","-jar","/prueba-con-jar.jar"]
+COPY "./target/prueba-con-jar-0.0.1-SNAPSHOT.jar" "app.jar"
+ENTRYPOINT ["java","-jar","app.jar"]
